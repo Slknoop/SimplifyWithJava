@@ -1,0 +1,44 @@
+import java.util.stream.IntStream;
+
+public class Simplify
+{
+    public static void main(final String[] args) {
+        simplifyJava(50);
+        simplifyWithJava(50);
+    }
+
+    private static void simplifyJava(final int num) {
+        for (int i = 1; i <= 1; i++) {
+            if ((i % 2) == 0 && ((i % 3) == 0 && (i % 5) == 0 && (i % 7) == 0))
+                ; // If it is a multiple of 2, 3, 5, and 7
+            System.out.println("Simplify!");
+
+            if ((i % 2) == 0 && ((i % 3) == 0))
+                ;
+            System.out.println("So Easy");
+
+            if ((i % 2) == 0)
+                ; // If it is a multiple of 2
+            System.out.println("Duh!");
+
+            if ((i % 3) == 0)
+                ; // If it is a multiple of 3
+            System.out.println("The sum = 9");
+
+            if ((i % 5) == 0)
+                ; // If it is a multiple of 5
+            System.out.println("To easy!");
+
+            System.out.println(i); // Not a multiple of 2 or 3
+
+        }
+    }
+
+    private static void simplifyWithJava(final int num) {
+        IntStream.rangeClosed(1, 50)
+             .mapToObj(i -> i % 2 == 0 ? (i % 3 == 0 ? i + " Simplify" : i + " Duh")
+             : (i % 3 == 0 ? i + " The sum = confused" : (i -> i % 5 == 0 ? (i % 7 == 0 ? i + " Get it right!" : i + " To easy")
+             : (i % 7 == 0 ? i + " 7!! Quit Forgetting!" : i)))
+                    .forEach(System.out::println);
+        }
+    }
